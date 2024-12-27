@@ -1,0 +1,64 @@
+<div>
+<center><h1 id="h1"> yuva's Todo List</h1></center>
+<input id="input"  placeholder="Enter the Item">
+<button id="butn" onclick="add()">Add....</button>
+<h2>  List:</h2>
+<ol id="listcontainer">
+</ol>
+</div>
+<style>
+    #input{
+        color: rgb(1, 1, 28);
+        background-color: rgb(24, 222, 149);
+        border: solid rgb(22, 193, 79)5px;
+        width: 50%;
+        height: 40px;
+        display: block;
+        border-radius: 2cm;
+    }
+    #butn{
+        background-color: rgb(146, 155, 152);
+            color: black;
+            text-decoration-color: azure;
+            border: solid rgb(65, 16, 188) 2px;
+            width: 50%;
+            font-size: large;
+            margin-top: 20px;
+            border-radius: 3cm;
+            font-style: italic;
+        }
+    #listcontainer{
+        color: rgb(22, 193, 79);
+        font-size: larger;
+        font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+    }
+    h1{
+        color: darkgray;
+    }
+    h2{
+        color: brown;
+        font-size: medium;
+        font-family: 'Times New Roman';
+        border: solid white 1px;
+        border-radius: 3cm;
+        padding: 3px;
+    }
+    body{
+        background-color: black;
+    }
+</style>
+
+<script>
+    var input=document.getElementById("input")
+    var ul=document.getElementById("listcontainer")
+    function add()
+    {
+        var listitem=document.createElement("li")
+        listitem.innerHTML=input.value +"         " +"<button  onclick='deleteitem(event)'>Delete</button>"
+        ul.append(listitem)
+    }
+    function deleteitem()
+    {
+        event.target.parentElement.remove()
+    }
+</script>
